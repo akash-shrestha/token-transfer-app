@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap");
+
+* html {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.gradient-bg-welcome {
+  background-color: #1e1e1e;
+  background-image: radial-gradient(
+      at 0% 0%,
+      hsla(253, 16%, 7%, 1) 0,
+      transparent 50%
+    ),
+    radial-gradient(at 50% 0%, rgb(135, 135, 135) 0, transparent 50%),
+    radial-gradient(at 100% 0%, rgb(37, 21, 23) 0, transparent 50%);
+}
+
+.gradient-bg-footer {
+  background-color: #1e1e1e;
+  background-image: radial-gradient(
+      at 0% 100%,
+      hsla(253, 16%, 7%, 1) 0,
+      transparent 53%
+    ),
+    radial-gradient(at 50% 150%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+}
+
+.blue-glassmorphism {
+  background: rgba(81, 81, 81, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+.white-glassmorphism {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.eth-card {
+  background-color: #4cdc6d;
+  background-image: radial-gradient(
+      at 83% 67%,
+      rgb(118, 121, 218) 0,
+      transparent 58%
+    ),
+    radial-gradient(at 67% 20%, rgb(205, 205, 205) 0, transparent 59%),
+    radial-gradient(at 88% 35%, rgb(93, 238, 108) 0, transparent 50%),
+    radial-gradient(at 31% 91%, rgb(150, 133, 213) 0, transparent 52%),
+    radial-gradient(at 27% 71%, rgb(236, 193, 210) 0, transparent 49%),
+    radial-gradient(at 74% 89%, rgb(211, 211, 211) 0, transparent 51%),
+    radial-gradient(at 53% 75%, hsla(174, 94%, 68%, 1) 0, transparent 45%);
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
