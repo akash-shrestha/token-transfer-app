@@ -45,7 +45,6 @@ export const TransactionProvider = ({ children }) => {
   const checkIfWalletIsConnected = async () => {
     try {
       if (!ethereum) return "Please install metamask wallet";
-
       const accounts = await ethereum.request({ method: "eth_accounts" });
       account = accounts[0];
 
@@ -67,8 +66,8 @@ export const TransactionProvider = ({ children }) => {
       const accounts = await ethereum.request({
         method: "eth_requestAccounts",
       });
-
       setCurrentAccount(accounts[0]);
+      getAccountDetails();
     } catch (error) {
       console.log(error);
       throw new Error("No ethereum object");
@@ -99,11 +98,8 @@ export const TransactionProvider = ({ children }) => {
   const sendTransaction = async () => {
     try {
       if (!ethereum) return alert("Please install metamask !");
-
       const { addressTo, amount } = formData;
-
       const transactionContract = getEthereumContract();
-
       const parsedAmount = ethers.utils.parseEther(amount);
 
       setIsLoading(true);
@@ -118,7 +114,6 @@ export const TransactionProvider = ({ children }) => {
       });
 
       let signerAddress = await signer.getAddress();
-
       transactionContract.on("Transfer", async (from) => {
         if (from == signerAddress) {
           getAccountDetails();
@@ -134,7 +129,7 @@ export const TransactionProvider = ({ children }) => {
 
   useEffect(() => {
     checkIfWalletIsConnected() && getAccountDetails();
-  }, []);
+  }, [currentAccount]);
 
   return (
     <TransactionContext.Provider
