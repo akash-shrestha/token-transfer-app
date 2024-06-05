@@ -1,5 +1,8 @@
 # token-transfer-app
 
+## Deployment
+https://token-transfer-app.vercel.app/
+
 ## Getting started
 -Clone the repo\
 -Navigate to root dir\
